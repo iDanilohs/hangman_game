@@ -16,21 +16,32 @@ def run():
     for letter in letter_by_letter:
         count_letter = count_letter + 1 
 
-    ubications = []
-    count_ubication = 0
-    for ubi in ubications:
-        count_ubication = count_ubication + 1
 
-    while count_ubication != count_letter:
-        user = str(input("Escribe una letra: "))
+    show = []
+    for i in range(0, count_letter):
+        show.append("_")
+
+    count_time = 0
+
+    while count_letter > count_time:
+        user = str(input("\n Escribe una letra: "))
         count = -1
         for i in select_word:
             count = count + 1
             if i == user:
-                ubications.append(count)
+                show[count] = user
+                count_time = count_time + 1
             else:
                 continue
-        print(ubications)
+
+        # print(show)
+        print(select_word)
+        # print("Contador de letras", count_letter)
+        for i in range(0, count_letter):
+            print(show[i], end=" ")
+        print("\n Tu letra ateriror fue ", user)
+        # print("contador de tiempos", count_time)
+    print("Ganaste Felicidades :)")
     
     
 
