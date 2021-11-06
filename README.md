@@ -122,15 +122,4 @@ def run():
 
 if __name__ == '__main__':
     run()
-```flow
-st=>start: 
-op=>operation: Select word at random
-op1=>operation: Convert the word into a list
-op2=>operation: Count the letters of the list
-op3=>operation: Create a new list with the locations of the letters
-op4=>operation: Declarate a variable for the lives
-e=>end: To game loop
-
-st->op->op1->op2->op3->op4->e
-
 ```
