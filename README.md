@@ -15,9 +15,5 @@ This is a game for guess the word randomly selected by the computer for you, and
 ![](https://img.shields.io/badge/python-3.9-green)
 
 
-
-[TOCM]
-
-
 # Documentation.
 
