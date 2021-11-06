@@ -125,4 +125,5 @@ if __name__ == '__main__':
 ```
 
 Let's look at the logic before the game loop.
+
 ![](https://i.imgur.com/la6Us8L.png)
