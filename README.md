@@ -125,7 +125,6 @@ if __name__ == '__main__':
 ```
 
 Let's look at the logic before the game loop.
-
 ```flow
 st=>start: 
 op=>operation: Select word at random
