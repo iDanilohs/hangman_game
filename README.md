@@ -125,6 +125,7 @@ if __name__ == '__main__':
 ```
 
 Let's look at the logic before the game loop.
+
 ```flow
 st=>start: 
 op=>operation: Select word at random
@@ -135,3 +136,5 @@ op4=>operation: Declarate a variable for the lives
 e=>end: To game loop
 
 st->op->op1->op2->op3->op4->e
+
+```
