@@ -16,4 +16,8 @@ This is a game for guess the word randomly selected by the computer for you, and
 
 
 # Documentation.
-
+first we need 2 modules from python native, there are random and OS. Now, how can import this modules? with an import function at the top of the code.
+```python
+import random
+import os
+```
