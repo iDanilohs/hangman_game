@@ -3,50 +3,77 @@ import os
 
 
 def run():
+    WIN = [
+        '''
+        
+ __     __                    _       
+ \ \   / /                   (_)      
+  \ \_/ /__  _   _  __      ___ _ __  
+   \   / _ \| | | | \ \ /\ / / | '_ \ 
+    | | (_) | |_| |  \ V  V /| | | | |
+    |_|\___/ \__,_|   \_/\_/ |_|_| |_|
+                                      
+                                      
+
+        ''',
+        '''
+        
+                      _                
+                     | |               
+  _   _  ___  _   _  | | ___  ___ ___  
+ | | | |/ _ \| | | | | |/ _ \/ __/ __| 
+ | |_| | (_) | |_| | | | (_) \__ \__ \ 
+  \__, |\___/ \__,_| |_|\___/|___/___/ 
+   __/ |                               
+  |___/                                
+
+        '''
+    ]
+
     HANGMANPICS = ['''
-  +---+
+  +---+  lives:  ❤️ ❤️ ❤️ ❤️ ❤️ ❤️
   |   |
       |
       |
       |
       |
 =========''', '''
-  +---+
+  +---+  lives: ❤️ ❤️ ❤️ ❤️ ❤️
   |   |
   O   |
       |
       |
       |
 =========''', '''
-  +---+
+  +---+  lives: ❤️ ❤️ ❤️ ❤️
   |   |
   O   |
   |   |
       |
       |
 =========''', '''
-  +---+
+  +---+  lives: ❤️ ❤️ ❤️
   |   |
   O   |
  /|   |
       |
       |
 =========''', '''
-  +---+
+  +---+  lives: ❤️ ❤️
   |   |
   O   |
  /|\  |
       |
       |
 =========''', '''
-  +---+
+  +---+  lives: ❤️
   |   |
   O   |
  /|\  |
  /    |
       |
 =========''', '''
-  +---+
+  +---+  You died 
   |   |
   O   |
  /|\  |
@@ -77,39 +104,52 @@ def run():
     #     show.append("_")
     show = [("_") for i in range(0, count_letter)]
 
-    count_time = 0
+    lives = 0
 
     # Big loop for a game
     # while count_letter > count_time:
     while show != letter_by_letter:
-        
-        user = str(input("\n Escribe una letra: "))
-        proof = user.isdigit()
-        assert len(user) > 0, "Debes poner una letra por lo menos"
-        assert proof == False, "Tienes que poner letras no números"
-        assert len(user) < 2, "Solamente debes poner una letra"
+        os.system("clear")
+        #read spaces
+        for i in range(0, count_letter):
+            print(show[i], end=" ")
+
+        #show image, we request letter
+        found = False
         count = -1
+        print(HANGMANPICS[lives])
+        # print(select_word)
+        user = str(input("\n Write one letter: "))
+
+        #Compare letters
         for i in select_word:
             count += 1
             if i == user:
                 show[count] = user
-                count_time += 1
+                found = True
             else:
                 continue
+        if not found:
+            lives += 1
 
-        # print(show)
-        print(select_word)
-        # print("Contador de letras", count_letter)
-        for i in range(0, count_letter):
-            print(show[i], end=" ")
-        print("\n Tu letra ateriror fue ", user)
-        # print("contador de tiempos", count_time)
+        if lives == 6:
+            break
+
+        #For errors
+        proof = user.isdigit()
+        assert len(user) > 0, "Debes poner una letra por lo menos"
+        assert proof == False, "Tienes que poner letras no números"
+        assert len(user) < 2, "Solamente debes poner una letra"
         
-
-    os.system("clear")
-    print("Ganaste Felicidades :)")
-    
-    
+        
+    if lives == 6:
+        os.system("clear")
+        print(WIN[1])
+        print("The word was: ",select_word)
+    else:
+        os.system("clear")
+        print(WIN[0])
+        print("The word was: ",select_word)
 
 
 if __name__ == '__main__':
