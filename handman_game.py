@@ -13,6 +13,7 @@ def run():
 
     select_word = words[aleatory_number]
     select_word = select_word.replace('\n', '')
+
     #become and counting letters of the word
     letter_by_letter = list(select_word)
     count_letter = 0
@@ -20,16 +21,22 @@ def run():
         count_letter += 1 
 
     #The list of the user
-    show = []
-    for i in range(0, count_letter):
-        show.append("_")
+    # show = []
+    # for i in range(0, count_letter):
+    #     show.append("_")
+    show = [("_") for i in range(0, count_letter)]
 
     count_time = 0
 
     # Big loop for a game
     # while count_letter > count_time:
     while show != letter_by_letter:
+        
         user = str(input("\n Escribe una letra: "))
+        proof = user.isdigit()
+        assert len(user) > 0, "Debes poner una letra por lo menos"
+        assert proof == False, "Tienes que poner letras no números"
+        assert len(user) < 2, "Solamente debes poner una letra"
         count = -1
         for i in select_word:
             count += 1
@@ -40,12 +47,14 @@ def run():
                 continue
 
         # print(show)
-        # print(select_word)
+        print(select_word)
         # print("Contador de letras", count_letter)
         for i in range(0, count_letter):
             print(show[i], end=" ")
         print("\n Tu letra ateriror fue ", user)
         # print("contador de tiempos", count_time)
+        
+
     os.system("clear")
     print("Ganaste Felicidades :)")
     
