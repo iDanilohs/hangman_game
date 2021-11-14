@@ -141,4 +141,6 @@ Let's look at the logic before the game loop.
     select_word = select_word.replace('\n', '')
 ```
 
-In this part of the code we clear the screen and select a random number. This number will be used to select a random word from the file.txt in this case (data.txt) 
+In this part of the code we clear the screen and select a random number. This number will be used to select a random word from the file.txt in this case (data.txt).
+
+also we create a new list (words = []) for read the archive, I mean put all of the words in the list  for then can combine the list words with the random number and create the variable (select_word) and for last we clean the word, I mean remove the unuseful spaces in the word (select word).
