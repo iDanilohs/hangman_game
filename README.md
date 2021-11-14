@@ -127,3 +127,18 @@ if __name__ == '__main__':
 Let's look at the logic before the game loop.
 
 ![](https://i.imgur.com/la6Us8L.png)
+
+```python
+    os.system("clear")
+    # Select a word
+    aleatory_number = random.randint(1, 172)
+    words = []
+    with open("./data.txt", "r", encoding="utf-8") as f:
+        for line in f:
+            words.append(str(line))
+
+    select_word = words[aleatory_number]
+    select_word = select_word.replace('\n', '')
+```
+
+In this part of the code we clear the screen and select a random number. This number will be used to select a random word from the file.txt in this case (data.txt) 
