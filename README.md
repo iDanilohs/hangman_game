@@ -144,3 +144,12 @@ Let's look at the logic before the game loop.
 In this part of the code we clear the screen and select a random number. This number will be used to select a random word from the file.txt in this case (data.txt).
 
 also we create a new list (words = []) for read the archive, I mean put all of the words in the list  for then can combine the list words with the random number and create the variable (select_word) and for last we clean the word, I mean remove the unuseful spaces in the word (select word).
+
+```python
+    letter_by_letter = list(select_word)
+    count_letter = 0
+    for letter in letter_by_letter:
+        count_letter += 1 
+```
+
+continuing in this part of the code by counting the letters of the word, using a (for loop), which reads letter by letter from the variable (select_word) and returns the number to be stored in the varible (count_letter)
